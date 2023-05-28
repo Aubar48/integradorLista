@@ -6,26 +6,27 @@ const { leerJSON, escribirJSON } = require('./leerEscribir')
 
 //funcionalidad
 module.exports = {
+    tareas: leerJSON(),
     listarTareas: () => {
         console.log(`Listado de tareas: `.bold.yellow);
         dataTarea.forEach((tarea) => {
             console.log(`${tarea.id}-> ${tarea.titulo} --> ${tarea.estado}`.bold.green);
         });
     },
-    agregarTarea: (id, titulo) => {
-        const tareaExistente = dataTarea.find(tarea => tarea.id === id);
+    agregarTarea: function(titulo) {
+        const tareaExistente = dataTarea.find(tarea => tarea.titulo === titulo);
         if (tareaExistente) {
-            console.log(`ERROR: El ID ${id} ya existe en la base de datos.`.bold.red);
-            return;
+          return console.log(`ERROR: El ID -> con ese titulo: ${titulo} --> ya existe en la base de datos.`.bold.red);
         } else {
-            let nuevaTarea = new Tarea(id, titulo);
-            dataTarea.push(nuevaTarea);
-            escribirJSON(dataTarea);
-            console.log(`El nuevo ID ${id} se agregó a la lista de tareas de la base de datos con éxito.`.bold.green);
-            return nuevaTarea;
+          let tareas = this.tareas || []; // initialize tareas to empty array if undefined
+          let ultimoId = tareas.length > 0 ? tareas[tareas.length - 1].id : 0;
+          let nuevaTarea = new Tarea(ultimoId + 1, titulo);
+          tareas.push(nuevaTarea);
+          escribirJSON(tareas);
+          console.log(`El nuevo titulo ${nuevaTarea.titulo} se agregó a la lista de tareas de la base de datos con éxito.`.bold.green);
+          return nuevaTarea;
         }
-
-    },
+      },
 
     eliminarTarea: (id) => {
         dataTarea.forEach((tarea) => {

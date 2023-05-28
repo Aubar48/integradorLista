@@ -1,5 +1,5 @@
 //funcion constructora
-function Tarea(id, titulo) {
+function Tarea(id,titulo) {
     this.id = id
     this.titulo = titulo;
     this.estado = "No iniciada";

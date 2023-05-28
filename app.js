@@ -15,14 +15,13 @@ if (typeof button === 'string') {
     case 'listar':
       app.listarTareas()
       break;
-    case 'agregar':
-      let id = +argv[3]
-      let titulo = argv[4]
-      if ([id, titulo].includes(undefined)) {
+    case 'agregar': 
+      let titulo = argv[3]
+      if ([titulo].includes(undefined)) {
         console.log(`ERROR: Faltan datos : id, titulo, estado de la nueva tarea`.bold.red)
         break;
       }else{
-        respuesta = app.agregarTarea(id, titulo)
+        respuesta = app.agregarTarea(titulo)
         break;
       }
     case 'buscar':

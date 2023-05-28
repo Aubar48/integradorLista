@@ -2,7 +2,7 @@ const {readFileSync,writeFileSync} = require('fs')
 const {join} = require('path')
 
 const leerJSON = () => {
-    const dataJSON = readFileSync(join(__dirname,'./dataTarea.json'),'utf-8')
+    const dataJSON = JSON.parse(readFileSync(join(__dirname,'./dataTarea.json'),'utf-8')) 
     return dataJSON 
 }
 
