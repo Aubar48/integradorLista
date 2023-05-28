@@ -7,16 +7,11 @@
    {
       "id": 2,
       "titulo": "Repasar Node.js",
-      "estado": "Terminada"
+      "estado": "Pendiente"
    },
    {
       "id": 3,
       "titulo": "Repasar MongoDB",
-      "estado": "No iniciada"
-   },
-   {
-      "id": 4,
-      "titulo": "a",
       "estado": "No iniciada"
    }
 ]
