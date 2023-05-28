@@ -67,7 +67,8 @@ module.exports = {
         });
     },
     textMenu: () => {
-        console.log(`1 -> Bienvenidos ala appTarea => Comandos:`.bold);
+        console.log(`0 -> Bienvenidos ala appTarea => Comandos:`.bold);
+        console.log(`1 -> agregar: agrega una tarea ala lista, por id y titulo:`.blue);
         console.log(`2 -> listar: trae la lista de tareas de la base de datos`.blue);
         console.log(`3 -> buscar: trae la lista de tareas de la base de datos por estado`.blue);
         console.log(`4 -> eliminar: elimina por id, una tarea, de la base de datos`.blue);

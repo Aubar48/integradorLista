@@ -18,15 +18,5 @@
       "id": 4,
       "titulo": "a",
       "estado": "b"
-   },
-   {
-      "id": 5,
-      "titulo": "Armar aplicación de tareas",
-      "estado": "Pendiente"
-   },
-   {
-      "id": 6,
-      "titulo": "f",
-      "estado": "No iniciada"
    }
 ]
